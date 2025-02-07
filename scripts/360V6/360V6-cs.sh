@@ -55,10 +55,10 @@ sed -i 's/"网络"/"网络设置"/g' `grep "网络" -rl ./`
 sed -i 's/"MWAN3 分流助手"/"分流助手"/g' `grep "MWAN3 分流助手" -rl ./`
 
 # 修改默认IP
-sed -i 's/192.168.10.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.10.1/10.0.10.1/g' package/base-files/files/bin/config_generate
 
 #　web登陆密码从password修改为空
-# sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root::0:0:99999:7:::/g' package/extra/default-settings/files/99-default-settings
+sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root::0:0:99999:7:::/g' package/extra/default-settings/files/99-default-settings
 
 #　固件版本号添加个人标识和日期
 sed -i "s/DISTRIB_DESCRIPTION='OpenWrt '/DISTRIB_DESCRIPTION='FICHEN(\$\(TZ=UTC-8 date +%Y-%m-%d\))@OpenWrt '/g" package/extra/default-settings/files/99-default-settings
