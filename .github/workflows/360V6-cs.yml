@@ -73,7 +73,6 @@ jobs:
         chmod +x ./scripts/feeds
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds install -a
 
     #- name: 导入补丁
       #run: |
