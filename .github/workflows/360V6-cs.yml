@@ -45,8 +45,14 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android $AGENT_TOOLSDIRECTORY
+        sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
+        sudo -E apt-get -y update
+        sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2204)
+        sudo -E systemctl daemon-reload
+        sudo -E apt-get -y autoremove --purge
         sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh)'
+        sudo -E apt-get -y clean
         sudo timedatectl set-timezone $TZ
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
