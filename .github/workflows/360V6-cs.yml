@@ -22,8 +22,8 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/wwz09/qihoo360
-  REPO_BRANCH: main
+  REPO_URL: https://github.com/koksaver/v6
+  REPO_BRANCH: test
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/360V6.config
   DIY_P1_SH: ./scripts/360V6/diy.sh
