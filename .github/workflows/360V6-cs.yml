@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/coolbele/sdf8057-ipq6000
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: ./config/360v6.config
+  CONFIG_FILE: ./config/hao.config
   DIY_P1_SH: ./scripts/360V6/diy2.sh
   DIY_P2_SH: ./scripts/360V6/360V6-cs.sh
   UPLOAD_BIN_DIR: true
