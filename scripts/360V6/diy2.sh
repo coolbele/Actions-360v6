@@ -14,7 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git kenzo https://github.com/NueXini/NueXini_Packages.git;main' >>feeds.conf.default
+echo 'src-git kenzo https://github.com/haiibo/openwrt-packages.git;master' >>feeds.conf.default
 #echo 'src-git small https://github.com/kenzok8/small.git;master' >>feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
