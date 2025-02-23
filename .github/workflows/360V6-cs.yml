@@ -47,7 +47,6 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo bash -c 'bash <(curl -s https://raw.githubusercontent.com/coolbele/Actions-360v6/refs/heads/main/patches/init_build_environment.sh)'
-        ./scripts/feeds update -a && rm -rf feeds/luci/applications/luci-app-mosdns
         rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
         rm -rf feeds/packages/utils/v2dat
         rm -rf feeds/packages/lang/golang
