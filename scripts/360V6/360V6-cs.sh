@@ -72,4 +72,11 @@ sed -i "s/hostname='OpenWrt'/hostname='QihooV6'/g" package/base-files/files/bin/
 # 添加自动挂载磁盘脚本
 # mkdir -p files/etc/hotplug.d/block && wget -O files/etc/hotplug.d/block/30-usbmount https://raw.githubusercontent.com/fichenx/P3TERX_Actions-OpenWrt/main/files/etc/hotplug.d/block/30-usbmount && chmod 755 files/etc/hotplug.d/block/30-usbmount
 
+# 1. 彻底删除 v2ray-plugin 源码，防止它参与编译
+rm -rf feeds/passwall_packages/v2ray-plugin
 
+# 2. 暴力降级所有 passwall 核心包对 Go 的版本要求 (防止其它包也报 1.22 错误)
+find ./feeds/passwall_packages -name "go.mod" -exec sed -i 's/go 1.22/go 1.21/g' {} +
+
+# 3. 解除 GOTOOLCHAIN 的本地限制
+find ./feeds/packages/lang/golang/ -name "*.mk" | xargs sed -i 's/GOTOOLCHAIN=local/GOTOOLCHAIN=auto/g'
