@@ -1,19 +1,39 @@
+#!/bin/bash
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# File name: diy-part1.sh
+# Description: OpenWrt DIY script part 1 (Before Update feeds)
+#
 
+# Uncomment a feed source
+#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-echo 'src-git passwall_packages https://github.com/coolbele/openwrt-passwall-packages.git;main' >>feeds.conf.default
-echo 'src-git passwall_luci https://github.com/coolbele/openwrt-passwall.git;main' >>feeds.conf.default
-
-#echo 'src-git passwall_packages https://github.com/yuyu913gzs/openwrt-passwall-packages.git;main' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/yuyu913gzs/openwrt-passwall-11.29.git;main' >>feeds.conf.default
-
-#echo 'src-git passwall_packages https://github.com/haiibo/openwrt-packages.git;master' >>feeds.conf.default
-
+# Add a feed source
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
+# Add a feed source
+
+echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
 #echo 'src-git MyPackages https://github.com/wwz09/MyPackages.git;main' >>feeds.conf.default
 #echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
 #echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns;v5' >>feeds.conf.default
 #echo 'src-git adguardhome https://github.com/xiaoxiao29/luci-app-adguardhome;master' >>feeds.conf.default
 #echo 'src-git 360v6 https://github.com/wwz09/360v6-packages' >>feeds.conf.default
 
+#echo 'src-git MyPackages https://github.com/wwz09/MyPackages.git;main' >>feeds.conf.default
+#echo 'src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' >>feeds.conf.default
+#echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns;v5' >>feeds.conf.default
+#echo 'src-git adguardhome https://github.com/xiaoxiao29/luci-app-adguardhome;master' >>feeds.conf.default
+#echo 'src-git 360v6 https://github.com/wwz09/360v6-packages' >>feeds.conf.default
 git clone https://github.com/laipeng668/luci-app-gecoosac.git package/luci-app-gecoosac
+
+# 在 diy-part2.sh 中
+# 下载指定 Commit 的压缩包并解压到 package 目录
+mkdir -p package/kenzok8_old
+curl -L https://github.com/kenzok8/openwrt-packages/archive/c587b23.tar.gz | tar -xz -C package/kenzok8_old --strip-components=1
