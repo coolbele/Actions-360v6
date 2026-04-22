@@ -23,7 +23,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolbele/v6
-  REPO_BRANCH: master
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/360V6.config
   DIY_P1_SH: ./scripts/360V6/diy.sh
