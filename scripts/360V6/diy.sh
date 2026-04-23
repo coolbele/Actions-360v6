@@ -16,6 +16,7 @@
 #echo 'src-git kenzok8 https://github.com/coolbele/openwrt-packages-2025-02-12.git;master' >> feeds.conf.default
 echo 'src-git passwall https://github.com/coolbele/openwrt-passwall.git;main' >> feeds.conf.default
 echo 'src-git passwall_packages https://github.com/coolbele/openwrt-passwall-packages-2025-02-12.git;main' >> feeds.conf.default
+echo 'src-git MyPackages https://github.com/koksaver/MyOpenWrtPackages' >>feeds.conf.default
 
 # Add a feed source
 #echo 'src-git passwall_packages https://github.com/wwz09/passwall-sall;main' >>feeds.conf.default
